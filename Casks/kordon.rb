@@ -1,6 +1,6 @@
 cask "kordon" do
-  version "1.2.2"
-  sha256 "1d96c3887c2ee5ece71983e8d6d4c51000fbf19224d0bf61b18c73082f078ae4"
+  version "1.3.0"
+  sha256 "29edb8c323875a6ff272dea61a778c7b1630705ab0cb355c8710c8838fa9c4e0"
 
   url "https://github.com/ef1m03/kordon/releases/download/v#{version}/Kordon-macos.zip"
   name "Kordon"
@@ -18,8 +18,7 @@ cask "kordon" do
 
   app "Kordon.app"
 
-  # Not notarized (that costs $99/year); the build is attested on GitHub instead:
-  #   gh attestation verify Kordon-macos.zip --repo ef1m03/kordon
+  # Not notarized (that costs $99/year); every release file is scanned by VirusTotal and Kaspersky instead.
   postflight do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Kordon.app"]
   end

@@ -1,6 +1,6 @@
 cask "kordon" do
-  version "1.4.2"
-  sha256 "b6c81867df59c6c60eb0aa56fda60c3ae9b83afc78da90b0bcdf47c3b002ca1a"
+  version "1.4.3"
+  sha256 "09d8de64e556537e9433217227d02fd6a045f8ebf8278ae745ec6d476761d339"
 
   url "https://github.com/ef1m03/kordon/releases/download/v#{version}/Kordon-macos.zip"
   name "Kordon"
@@ -12,13 +12,11 @@ cask "kordon" do
     strategy :github_latest
   end
 
-  # Kordon updates itself from its menu.
   auto_updates true
   depends_on macos: ">= :big_sur"
 
   app "Kordon.app"
 
-  # Not notarized (that costs $99/year); every release file is scanned by VirusTotal and Kaspersky instead.
   postflight do
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Kordon.app"]
   end

@@ -1,6 +1,6 @@
 cask "kordon" do
-  version "1.4.4"
-  sha256 "5ddcdb140ea656f6bf40e8f2a68c6f7265a6ef44d4eb360ef1fed7a842253096"
+  version "1.4.5"
+  sha256 "c86260fc802a31b9eef13e0cc0c79524bb55bebdedd4197cf5e58317f87fe88f"
 
   url "https://github.com/ef1m03/kordon/releases/download/v#{version}/Kordon-macos.zip"
   name "Kordon"
@@ -17,11 +17,6 @@ cask "kordon" do
   depends_on macos: ">= :big_sur"
 
   app "Kordon.app"
-
-  # Not notarized (that costs $99/year); every release file is scanned by VirusTotal and Kaspersky instead.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Kordon.app"]
-  end
 
   uninstall launchctl: "dev.efimov.kordon",
             signal:    ["TERM", "dev.efimov.kordon"]

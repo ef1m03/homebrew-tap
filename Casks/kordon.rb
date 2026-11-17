@@ -1,6 +1,6 @@
 cask "kordon" do
-  version "1.5.1"
-  sha256 "b3b939eb016e47b2ed15695742cda11452799ab57ad301987fdcd0047b3295f5"
+  version "1.5.3"
+  sha256 "21ada891c2f52b982ae9156966058bc2db5a03646482bb957632a3e5731a3b78"
 
   url "https://github.com/ef1m03/kordon/releases/download/v#{version}/Kordon-macos.zip"
   name "Kordon"
